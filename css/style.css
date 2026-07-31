@@ -105,10 +105,10 @@ img { max-width: 100%; display: block; }
 .brand span {
   display: block;
   font-family: var(--font-body);
-  font-size: .7rem;
+  font-size: .8rem;
   color: var(--moss-deep);
   font-weight: 600;
-  letter-spacing: .08em;
+  letter-spacing: .06em;
 }
 
 .nav-links {
@@ -206,7 +206,7 @@ img { max-width: 100%; display: block; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(46,42,34,.78) 0%, rgba(46,42,34,.28) 55%, rgba(46,42,34,.05) 100%);
+  background: linear-gradient(to top, rgba(46,42,34,.85) 0%, rgba(46,42,34,.35) 55%, rgba(46,42,34,.08) 100%);
 }
 .hero-content {
   position: relative;
@@ -215,7 +215,8 @@ img { max-width: 100%; display: block; }
   padding-block: clamp(2.5rem, 8vw, 5rem);
 }
 .hero-content h1, .hero-content p { color: #fff; }
-.hero-cta { margin-top: .75rem; }
+.hero-content h1 { font-size: clamp(2rem, 4.5vw, 2.5rem); text-shadow: 0 1px 6px rgba(0,0,0,.35); }
+.hero-cta { margin-top: 1.25rem; }
 .hero-eyebrow {
   display: inline-block;
   font-size: .85rem;
@@ -223,6 +224,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   color: var(--gold);
   margin-bottom: .6rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,.6);
 }
 
 /* ================= SECTIONS ================= */
@@ -296,7 +298,7 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 /* testimonials */
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.25rem;
   margin-top: 1.5rem;
 }
@@ -343,7 +345,10 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
   display: block;
 }
 .price-card .label {
+  display: block;
+  margin-bottom: .35rem;
   font-size: .85rem;
+  font-weight: 600;
   color: var(--ink-soft);
 }
 .price-card .per {
@@ -470,8 +475,8 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   color: #E8E2D2;
   opacity: .75;
@@ -482,7 +487,15 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
   background: rgba(232,226,210,.12);
   text-decoration: none;
 }
-.social-links svg { width: 18px; height: 18px; }
+.social-links svg { width: 15px; height: 15px; }
+.social-links a.stars {
+  width: auto;
+  padding: 0 .55rem;
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: .78rem;
+  letter-spacing: 1px;
+}
 .footer-bottom {
   border-top: 1px solid rgba(232,226,210,.15);
   padding: 1.1rem clamp(1.25rem, 4vw, 3rem);
