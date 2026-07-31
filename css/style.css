@@ -10,8 +10,8 @@
   /* color */
   --ink: #2E2A22;          /* warm near-black, dark wood grain */
   --ink-soft: #5A5344;      /* secondary text */
-  --paper: #F7F2E7;         /* warm cream wall/linen */
-  --paper-raised: #FFFDF8;  /* card surface, slightly lighter than paper */
+  --paper: #FCFBF8;         /* warm, minimal off-white page background */
+  --paper-raised: #F7F2E7;  /* warm cream card surface — subtle contrast against paper */
   --sand: #E7DCC4;          /* jute rug / hairline base */
   --moss: #6E7350;          /* sage cushion green — primary accent */
   --moss-deep: #4C5138;     /* pressed state / dark accent */
@@ -139,6 +139,7 @@ img { max-width: 100%; display: block; }
   padding: .55rem 1.2rem !important;
   border-radius: var(--radius);
   border-bottom: none !important;
+  transition: background-color .2s ease, border-color .2s ease;
 }
 .nav-cta:hover { background: var(--moss-deep); border-color: transparent !important; }
 
@@ -214,6 +215,7 @@ img { max-width: 100%; display: block; }
   padding-block: clamp(2.5rem, 8vw, 5rem);
 }
 .hero-content h1, .hero-content p { color: #fff; }
+.hero-cta { margin-top: .75rem; }
 .hero-eyebrow {
   display: inline-block;
   font-size: .85rem;
@@ -283,9 +285,11 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
   text-decoration: none;
   font-size: .95rem;
   width: fit-content;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease, box-shadow .2s ease;
 }
+.btn:hover { transform: translateY(-1px); }
 .btn-primary { background: var(--moss); color: #fff; }
-.btn-primary:hover { background: var(--moss-deep); }
+.btn-primary:hover { background: var(--moss-deep); box-shadow: 0 4px 12px rgba(76,81,56,.22); }
 .btn-outline { border: 1.5px solid var(--ink); color: var(--ink); }
 .btn-outline:hover { background: var(--ink); color: #fff; }
 
@@ -342,15 +346,28 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
   font-size: .85rem;
   color: var(--ink-soft);
 }
+.price-card .per {
+  display: block;
+  margin-top: .35rem;
+  font-size: .75rem;
+  color: var(--ink-soft);
+  opacity: .75;
+}
 .price-note {
   font-size: .9rem;
   color: var(--ink-soft);
 }
 
 /* FAQ accordion */
+.faq-list {
+  background: var(--paper-raised);
+  border-radius: var(--radius);
+  padding: .25rem clamp(1.25rem, 3vw, 2rem);
+}
 .faq-item {
   border-bottom: 1px solid var(--line);
 }
+.faq-item:last-child { border-bottom: none; }
 .faq-item summary {
   cursor: pointer;
   padding: 1.1rem 0;
@@ -444,6 +461,28 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
 }
 .site-footer a:hover { opacity: 1; text-decoration: underline; }
 .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+.social-links {
+  display: flex;
+  gap: .9rem;
+  margin-top: 1.1rem;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #E8E2D2;
+  opacity: .75;
+  transition: opacity .2s ease, background-color .2s ease;
+}
+.social-links a:hover {
+  opacity: 1;
+  background: rgba(232,226,210,.12);
+  text-decoration: none;
+}
+.social-links svg { width: 18px; height: 18px; }
 .footer-bottom {
   border-top: 1px solid rgba(232,226,210,.15);
   padding: 1.1rem clamp(1.25rem, 4vw, 3rem);
