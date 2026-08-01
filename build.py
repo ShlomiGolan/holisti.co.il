@@ -545,6 +545,97 @@ FILES = {
     "cancellation.html": page_shell("מדיניות ביטולים", "cancellation.html", cancellation_body, description="מדיניות ביטולים ושינויי תור אצל שלומי גולן."),
 }
 
+# ---------- ROBOTS.TXT ----------
+# Search/answer bots: fetch pages live in response to a user question and
+# typically link back to the source - allowed.
+# Training bots: bulk-scrape content into model training data, with no
+# link-back or attribution - blocked.
+ROBOTS_TXT = """User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: %s/sitemap.xml
+""" % SITE_URL
+
+# ---------- SITEMAP.XML ----------
+SITEMAP_PRIORITY = {
+    "index.html": "1.0",
+    "massage.html": "0.8",
+    "breathwork.html": "0.8",
+    "about.html": "0.6",
+    "contact.html": "0.6",
+    "accessibility.html": "0.2",
+    "privacy.html": "0.2",
+    "cancellation.html": "0.2",
+}
+
+sitemap_urls = "\n".join(
+    f"""  <url>
+    <loc>{SITE_URL}/{fname}</loc>
+    <priority>{SITEMAP_PRIORITY[fname]}</priority>
+  </url>"""
+    for fname, _, _ in PAGES
+)
+
+SITEMAP_XML = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{sitemap_urls}
+</urlset>
+"""
+
+FILES["robots.txt"] = ROBOTS_TXT
+FILES["sitemap.xml"] = SITEMAP_XML
+
 for fname, content in FILES.items():
     with open(os.path.join(OUT, fname), "w", encoding="utf-8") as f:
         f.write(content)
