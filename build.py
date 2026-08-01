@@ -635,6 +635,7 @@ SITEMAP_XML = f"""<?xml version="1.0" encoding="UTF-8"?>
 
 FILES["robots.txt"] = ROBOTS_TXT
 FILES["sitemap.xml"] = SITEMAP_XML
+FILES["google98915dc4dd8df94f.html"] = "google-site-verification: google98915dc4dd8df94f.html\n"
 
 for fname, content in FILES.items():
     with open(os.path.join(OUT, fname), "w", encoding="utf-8") as f:
