@@ -469,9 +469,9 @@ contact_body = f"""  <section class="container" style="padding-top:3rem;">
   <section class="container">
     <div style="border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
       <iframe
-        src="https://www.google.com/maps?q=%D7%A7%D7%99%D7%91%D7%95%D7%A5+%D7%9E%D7%A9%D7%9E%D7%A8%D7%95%D7%AA&z=13&output=embed"
+        src="https://www.google.com/maps?q=%D7%A9%D7%9C%D7%95%D7%9E%D7%99+%D7%92%D7%95%D7%9C%D7%9F+%D7%A0%D7%98%D7%95%D7%A8%D7%95%D7%A4%D7%AA%D7%99%D7%94+%D7%95%D7%A2%D7%99%D7%A1%D7%95%D7%99+%D7%9E%D7%A9%D7%95%D7%9C%D7%91%2C+%D7%9E%D7%A9%D7%9E%D7%A8%D7%95%D7%AA&z=16&output=embed"
         width="100%" height="360" style="border:0; display:block;" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade" title="מפת קיבוץ משמרות"></iframe>
+        referrerpolicy="no-referrer-when-downgrade" title="מיקום הקליניקה של שלומי גולן במפה"></iframe>
     </div>
   </section>
   <section class="container">
