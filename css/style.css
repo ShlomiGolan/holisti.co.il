@@ -411,6 +411,13 @@ section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
   flex-wrap: wrap;
 }
 .about-intro .portrait { width: 120px; height: 120px; flex-shrink: 0; }
+.about-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
 .bio-row {
   display: flex;
   align-items: center;
